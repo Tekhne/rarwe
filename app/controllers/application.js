@@ -31,7 +31,7 @@ var SongCollection = Ember.Object.extend({
 });
 
 var songs = SongCollection.create();
-songs.get('content').pushObject(blackDog)
+songs.get('content').pushObject(blackDog);
 songs.get('content').pushObject(yellowLedbetter);
 songs.get('content').pushObject(pretender);
 
