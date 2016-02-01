@@ -17,3 +17,28 @@ html, body {
   color: #555555;
   background-color: #e7e7e7;
 }
+
+.songs .rating {
+  color: #aaa;
+  font-size: 1.1em;
+}
+
+.empty-list {
+  min-height: 100px;
+  text-align: center;
+}
+
+.empty-list .empty-message {
+  color: #555;
+  display: inline-block;
+  line-height: 100px;
+}
+
+.band-link .pointer {
+  display: none;
+  float: right;
+}
+
+.band-link.active .pointer {
+  display: block;
+}
