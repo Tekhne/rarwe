@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import Band from '../models/band';
+import Song from '../models/song';
 
 var blackDog = Song.create({
   title: 'Black Dog',
