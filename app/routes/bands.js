@@ -32,6 +32,9 @@ var pretender = Song.create({
 
 var Band = Ember.Object.extend({
   name: '',
+  slug: Ember.computed('name', function () {
+    return this.get('name').dasherize();
+  }),
   songs: []
 });
 
