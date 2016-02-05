@@ -1,11 +1,5 @@
 import Ember from 'ember';
 
-var Song = Ember.Object.extend({
-  title: '',
-  rating: 0,
-  band: ''
-});
-
 var blackDog = Song.create({
   title: 'Black Dog',
   band: 'Led Zeppelin',
@@ -28,14 +22,6 @@ var pretender = Song.create({
   title: 'The Pretender',
   band: 'Foo Fighters',
   rating: 2
-});
-
-var Band = Ember.Object.extend({
-  name: '',
-  slug: Ember.computed('name', function () {
-    return this.get('name').dasherize();
-  }),
-  songs: []
 });
 
 var ledZeppelin = Band.create({
