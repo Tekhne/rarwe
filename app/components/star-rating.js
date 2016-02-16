@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   stars: Ember.computed('rating', 'maxRating', function () {
     var fullStars = this.starRange(1, this.get('rating'), 'full');
     var emptyStars = this.starRange(this.get('rating') + 1, this.get('maxRating'), 'empty');
-    return fullStars.concat(emtpyStars);
+    return fullStars.concat(emptyStars);
   }),
 
   starRange: function (start, end, type) {
@@ -31,7 +31,7 @@ export default Ember.Component.extend({
       this.sendAction('setAction', {
         item: this.get('item'),
         rating: newRating
-      })
+      });
     }
   }
 });
