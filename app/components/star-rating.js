@@ -27,7 +27,10 @@ export default Ember.Component.extend({
 
   actions: {
     set: function (newRating) {
-      this.get('item').set('rating', newRating);
+      this.sendAction('setAction', {
+        item: this.get('item'),
+        rating: newRating
+      })
     }
   }
 });
