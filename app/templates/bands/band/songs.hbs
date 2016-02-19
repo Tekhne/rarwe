@@ -1,23 +1,25 @@
 <div class="row">
   <ul class="list-group songs">
-    <li class="list-group-item">
-      {{input type="text" class="new-song" placeholder="New song" value=title}}
-      <button class="btn btn-primary btn-sm new-song-button" disabled={{isAddButtonDisabled}} {{action "createSong"}}>
-        Add
-      </button>
-    </li>
-    {{#each model.songs as |song|}}
-      <li class="list-group-item song">
-        {{song.title}}
-        {{star-rating item=song rating=song.rating on-click=(action "updateRating")}}
+    {{#if songCreationStarted}}
+      <li class="list-group-item">
+        {{input type="text" class="new-song" placeholder="New song" value=title}}
+        <button class="btn btn-primary btn-sm new-song-button" disabled={{isAddButtonDisabled}} {{action "createSong"}}>
+          Add
+        </button>
       </li>
-    {{/each}}
-    {{#if noSongs}}
-      <li class="list-group-item empty-list">
-        <div class="empty-message">
-          There are no songs yet. Why don't you <a href="javascript: void(0);" {{action "enableSongCreation"}}>create one</a>?
-        </div>
-      </li>
+      {{#each model.songs as |song|}}
+        <li class="list-group-item song">
+          {{song.title}}
+          {{star-rating item=song rating=song.rating on-click=(action "updateRating")}}
+        </li>
+      {{/each}}
+      {{#if noSongs}}
+        <li class="list-group-item empty-list">
+          <div class="empty-message">
+            There are no songs yet. Why don't you <a href="javascript: void(0);" {{action "enableSongCreation"}}>create one</a>?
+          </div>
+        </li>
+      {{/if}}
     {{/if}}
   </ul>
 </div>
