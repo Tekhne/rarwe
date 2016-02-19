@@ -23,9 +23,5 @@ export default Ember.Controller.extend({
 
   isAddButtonDisabled: Ember.computed('title', function () {
     return Ember.isEmpty(this.get('title'));
-  }),
-
-  noSongs: Ember.computed('model.songs.length', function () {
-    return this.get('model.songs.length') === 0;
   })
 });
