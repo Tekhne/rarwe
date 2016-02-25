@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return bands;
+    return this.store.findAll('band');
   },
 
   actions: {
