@@ -8,7 +8,7 @@
           {{action "createBand"}}>Add</button>
       </form>
     </li>
-    {{#each model.sortedContent as |band|}}
+    {{#each model as |band|}}
       <li class="list-group-item">
         {{#link-to "bands.band" band.slug class="list-group-item-band-link"}}
           {{band.name}}
