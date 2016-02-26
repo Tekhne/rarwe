@@ -1,6 +1,7 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'rarwe/tests/helpers/module-for-acceptance';
 import Pretender from 'pretender';
+import httpStubs from '../helpers/http-stubs';
 
 moduleForAcceptance('Acceptance | bands');
 
@@ -8,28 +9,22 @@ var server;
 
 test('List bands', function (assert) {
   server = new Pretender(function () {
-    this.get('/bands', function () {
-      var response = {
-        data: [
-          {
-            id: 1,
-            type: 'bands',
-            attributes: {
-              name: 'Radiohead'
-            }
-          },
-          {
-            id: 2,
-            type: 'bands',
-            attributes: {
-              name: 'Long Distance Calling'
-            }
-          }
-        ]
-      };
-
-      return [200, { 'Content-Type': 'application/vnd.api+json' }, JSON.stringify(response)];
-    });
+    httpStubs.stubBands(this, [
+      {
+        id: 1,
+        attributes: {
+          name: 'Radiohead'
+        }
+      },
+      {
+        id: 2,
+        type: 'bands',
+        attributes: {
+          name: 'Long Distance Calling'
+        }
+      }
+    ]);
+    httpStubs.stubCreateBand(this, 2);
   });
 
   visit('/bands');
