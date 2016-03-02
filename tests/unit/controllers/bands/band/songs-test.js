@@ -2,8 +2,6 @@ import Ember from 'ember';
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('controller:bands/band/songs', 'Unit | Controller | bands/band/songs', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
 });
 
 test('canCreateSong', function (assert) {
