@@ -28,5 +28,8 @@ export default Ember.Controller.extend({
 
   isAddButtonDisabled: Ember.computed('title', function () {
     return Ember.isEmpty(this.get('title'));
-  })
+  }),
+
+  sortProperties: ['rating:desc', 'title:asc'],
+  sortedSongs: Ember.computed.sort('model.songs', 'sortProperties')
 });
