@@ -31,10 +31,6 @@ export default Ember.Controller.extend({
 
       song.set('rating', rating);
       song.save();
-    },
-
-    setSorting: function (option) {
-      this.set('sortBy', option);
     }
   },
 
