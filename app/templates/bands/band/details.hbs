@@ -2,11 +2,11 @@
   <div class="panel-body">
     <h4 class="panel-title band-description-header">Description</h4>
 
-    {{#if isEditing}}
+    {{#liquid-if isEditing class="band-description"}}
       <button class="btn btn-primary pull-right" {{action "save"}}>Save</button>
     {{else}}
       <button class="btn btn-primary pull-right" {{action "edit"}}>Edit</button>
-    {{/if}}
+    {{/liquid-if}}
 
     <div class="clearfix"></div>
 
