@@ -53,8 +53,8 @@
         {{#star-rating item=song rating=song.rating as |stars|}}
           {{#liquid-bind stars as |liquidStars|}}
             {{#each liquidStars as |star|}}
-              <span class="star-rating glyphicon
-                {{if star.full 'glyphicon-star' 'glyphicon-star-empty'}}"
+              <span class="star-rating fa
+                {{if star.full 'fa-star' 'fa-star-o'}}"
                 {{action "updateRating" song star.rating}}>
               </span>
             {{/each}}
