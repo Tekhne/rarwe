@@ -23,11 +23,11 @@ export default Ember.Controller.extend({
   }),
 
   actions: {
-    enableSongCreation: function () {
+    enableSongCreation() {
       this.set('songCreationStarted', true);
     },
 
-    updateRating: function (params) {
+    updateRating(params) {
       var song = params.item;
       var rating = params.rating;
 
