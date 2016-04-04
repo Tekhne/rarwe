@@ -40,13 +40,9 @@ export default Ember.Controller.extend({
     }
   },
 
-  canCreateSong: Ember.computed('songCreationStarted', 'model.songs.length', function () {
-    return this.get('songCreationStarted') || this.get('model.songs.length');
-  }),
-
-  isAddButtonDisabled: Ember.computed('title', function () {
-    return Ember.isEmpty(this.get('title'));
-  }),
+  isAddButtonDisabled: Ember.computed.empty('title'),
+  hasSongs: Ember.computed.bool('model.songs.length'),
+  canCreateSong: Ember.computed.or('songCreationStarted', 'hasSongs'),
 
   sortBy: 'ratingDesc',
 
